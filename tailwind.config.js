@@ -8,14 +8,12 @@ module.exports = {
         80: '20rem'
       },
       colors: {
-        'black-lighten': '#161616',
         primary: '#5179ff',
-        'gray-lighten': '#989898',
-        'gray-darken': '#3a3939',
-        dark: '#1C1C1E',
-        'dark-darken': '#19191b',
-        'dark-lighten': '#333335',
-        'dark-lighten-2': '#49494b'
+        dark: '#191a1f',
+        'dark-2': '#1e1f24',
+        'light-2': '#9696a3',
+        'my-red': '#d22f27',
+        'dark-light': '#fdfdfd'
       }
     }
   },

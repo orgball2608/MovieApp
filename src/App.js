@@ -9,7 +9,6 @@ function App() {
           <Routes>
             <Route path='/' index element={<Home />} />
             <Route path='/movie/:id' element={<h1>Chua lam</h1>} />
-            <Route path='*' element={<h1>404 Not Found</h1>} />
           </Routes>
         </BrowserRouter>
       </Layout>

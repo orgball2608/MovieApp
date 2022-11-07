@@ -1,22 +1,21 @@
 import React from 'react'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import BannerSlider from '../../components/Slider/BannerSlider'
-
+import SideBar from '../../components/SideBar'
 const Home = () => {
   const [currentTab, setCurrentTab] = React.useState('movie')
   return (
     <>
       <div className='flex'>
-        <div className='shrink-0 max-w-[260px] w-[90vw]'></div>
-
-        <div className='flex-grow pt-5 px-[28px] border-x border-gray-darken min-h-screen'>
+        <SideBar />
+        <div className='flex-grow pt-5 px-[28px] border-x border-dark-2 min-h-screen'>
           <div className='flex justify-between items-end'>
-            <div className='inline-flex gap-[40px] pb-[14px] border-b border-gray-darken relative'>
+            <div className='inline-flex gap-[40px] pb-[8px] border-gray-darken relative italic '>
               <button
                 onClick={() => setCurrentTab('tv')}
                 className={`${
                   currentTab === 'tv' &&
-                  'text-white font-medium after:absolute after:bottom-0 after:left-[6%] after:bg-white after:h-[3px] after:w-10'
+                  'text-white text-base after:absolute after:bottom-0 after:left-[6%] after:bg-white after:h-[3px] after:w-10 font-bold'
                 } transition duration-300 text-white`}
               >
                 TV Series
@@ -25,7 +24,7 @@ const Home = () => {
                 onClick={() => setCurrentTab('movie')}
                 className={`${
                   currentTab === 'movie' &&
-                  'text-white after:absolute after:bottom-0 after:right-[40%] after:bg-white after:h-[3px] after:w-10 font-bold'
+                  'text-white text-base after:absolute after:bottom-0 after:right-[40%] after:bg-white after:h-[3px] after:w-10 font-bold'
                 } transition duration-300 text-white`}
               >
                 Movies
@@ -34,7 +33,7 @@ const Home = () => {
                 onClick={() => setCurrentTab('anime')}
                 className={`${
                   currentTab === 'anime' &&
-                  'text-white after:absolute after:bottom-0 after:right-[3%] after:bg-white after:h-[3px] after:w-10 font-bold'
+                  'text-white text-base after:absolute after:bottom-0 after:right-[3%] after:bg-white after:h-[3px] after:w-10 font-bold'
                 } transition duration-300 text-white`}
               >
                 Animes
