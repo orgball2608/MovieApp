@@ -8,8 +8,11 @@ import { AiFillStar } from 'react-icons/ai'
 import Skeleton from '../Skeleton'
 import 'swiper/swiper-bundle.css'
 
-const BannerSlider = () => {
-  const { data, isFetching, isLoading } = useGetHomeApiQuery('/trending/movie/day')
+const BannerSlider = (currentTab) => {
+  const MoviesApi = useGetHomeApiQuery(`/trending/movie/day`)
+  const TvApi = useGetHomeApiQuery(`/trending/tv/day`)
+
+  const { data, isLoading, isFetching } = currentTab.currentTab === 'movie' ? MoviesApi : TvApi
 
   return (
     <div className='mt-6 relative h-0 md:pb-[45%] pb-[55%]  tw-banner-slider'>
@@ -19,7 +22,7 @@ const BannerSlider = () => {
           modules={[Navigation, Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           slidesPerView={1}
-          className='!absolute !top-0 !left-0 !w-full !h-full  !rounded-lg'
+          className='!absolute !top-0 !left-0 !w-full !h-full  !rounded-3xl'
         >
           {data.results.map((film, index) => (
             <SwiperSlide key={film.id}>
@@ -35,8 +38,8 @@ const BannerSlider = () => {
                   <h2 className='text-5xl text-white font-black tracking-wide tw-multiline-ellipsis-2'>
                     {film.title || film.name}
                   </h2>
-                  <p className='text-white mt-1'>
-                    {film.release_date && `Release date: ${film.release_date}`}
+                  <p className='text-white mt-1 font-bold'>
+                    {film.release_date && `${film.release_date}`}
                     {film.first_air_date && `Last episode date: ${film.first_air_date}`}
                   </p>
 

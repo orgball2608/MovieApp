@@ -1,10 +1,9 @@
 import React from 'react'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import BannerSlider from '../../components/Slider/BannerSlider'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const Home = () => {
-  const [currentTab, setCurrentTab] = React.useState('home')
+  const [currentTab, setCurrentTab] = React.useState('movie')
   return (
     <>
       <div className='flex'>
@@ -14,38 +13,41 @@ const Home = () => {
           <div className='flex justify-between items-end'>
             <div className='inline-flex gap-[40px] pb-[14px] border-b border-gray-darken relative'>
               <button
-                onClick={() => setCurrentTab('movie')}
-                className={`${
-                  currentTab === 'movie' &&
-                  'text-white font-medium after:absolute after:bottom-0 after:left-[6%] after:bg-white after:h-[3px] after:w-5'
-                } transition duration-300`}
-              >
-                Movie
-              </button>
-              <button
                 onClick={() => setCurrentTab('tv')}
                 className={`${
                   currentTab === 'tv' &&
-                  'text-white font-medium after:absolute after:bottom-0 after:right-[13%] after:bg-white after:h-[3px] after:w-5'
-                } transition duration-300`}
+                  'text-white font-medium after:absolute after:bottom-0 after:left-[6%] after:bg-white after:h-[3px] after:w-10'
+                } transition duration-300 text-white`}
               >
-                TV Show
+                TV Series
+              </button>
+              <button
+                onClick={() => setCurrentTab('movie')}
+                className={`${
+                  currentTab === 'movie' &&
+                  'text-white after:absolute after:bottom-0 after:right-[40%] after:bg-white after:h-[3px] after:w-10 font-bold'
+                } transition duration-300 text-white`}
+              >
+                Movies
+              </button>
+              <button
+                onClick={() => setCurrentTab('anime')}
+                className={`${
+                  currentTab === 'anime' &&
+                  'text-white after:absolute after:bottom-0 after:right-[3%] after:bg-white after:h-[3px] after:w-10 font-bold'
+                } transition duration-300 text-white`}
+              >
+                Animes
               </button>
             </div>
             <div className='flex gap-6 items-center'>
               <div className='w-6 h-6 rounded-full border border-gray tw-flex-center cursor-pointer'>
-                <IoMdNotificationsOutline size={17} />
+                <IoMdNotificationsOutline size={17} className='text-white mx-auto mt-[1px]' />
               </div>
-              <LazyLoadImage
-                url='./avatar.jpg'
-                alt='User avatar'
-                className='w-7 h-7 rounded-full object-cover'
-                effect='blur'
-              />
             </div>
           </div>
 
-          <BannerSlider />
+          <BannerSlider currentTab={currentTab} />
         </div>
 
         <div className='shrink-0 max-w-[308px] w-full hidden md:block'></div>
