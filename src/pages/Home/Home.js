@@ -1,9 +1,12 @@
 import React from 'react'
 import { IoMdNotificationsOutline } from 'react-icons/io'
-import BannerSlider from '../../components/Slider/BannerSlider'
-import SideBar from '../../components/SideBar'
+
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentTab } from '../../features/currentTab/currentTab.slice'
+
+import SideBar from '../../components/SideBar'
+import Main from '../../components/Main'
+
 const Home = () => {
   const dispatch = useDispatch()
   const { currentTab } = useSelector((state) => state.currentTab)
@@ -48,8 +51,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          <BannerSlider />
+          <Main />
         </div>
 
         <div className='shrink-0 max-w-[308px] w-full hidden md:block'></div>

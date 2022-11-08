@@ -18,6 +18,23 @@ export const homeApi = createApi({
   })
 })
 
+export const trendingApi = createApi({
+  reducerPath: 'trendingApi',
+  baseQuery: axiosBaseQuery({
+    baseUrl: API_URL
+  }),
+  endpoints: (builder) => ({
+    getTrendingApi: builder.query({
+      query: () => ({
+        url: '/trending/all/day?page=2',
+        method: 'GET',
+        params: { api_key: 'd2e68036fdaa17368b7194f3b45252c8' }
+      })
+    })
+  })
+})
+
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { useGetHomeApiQuery } = homeApi
+export const { useGetTrendingApiQuery } = trendingApi

@@ -18,8 +18,9 @@ const SideBar = () => {
               className='lg:w-11 lg:h-10 md:w-9 md:h-8 text-dark '
             />
             <div className='flex flex-row gap-0'>
-              <h1 className='text-dark-light lg:text-2xl md:text-lg tracking-widest font-bold'>Movie App</h1>
+              <h1 className='text-dark-light lg:text-2xl md:text-lg tracking-widest font-bold'>Waang</h1>
               <p className='text-red-500 lg:text-2xl md:text-lg font-bold mt-1'>.</p>
+              <p className='text-red-500 lg:text-2xl md:text-lg font-bold '>xn</p>
             </div>
           </div>
         </Link>

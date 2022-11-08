@@ -1,6 +1,7 @@
 import Home from './pages/Home/index'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+
 function App() {
   return (
     <>

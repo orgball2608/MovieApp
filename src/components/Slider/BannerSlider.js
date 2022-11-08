@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { resizeImage } from '../../shared/ultis'
+import { resizeImage } from '../../shared/utils'
 import { useGetHomeApiQuery } from '../../services/Home/home.service'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper'
@@ -25,6 +25,7 @@ const BannerSlider = () => {
           modules={[Navigation, Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           slidesPerView={1}
+          navigation
           className='!absolute !top-0 !left-0 !w-full !h-full  !rounded-3xl'
         >
           {data.results.map((film, index) => (

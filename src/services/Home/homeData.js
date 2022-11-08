@@ -32,13 +32,16 @@ export const getHomePageData = async () => {
         }))
       }
     }
+    console.log(final)
 
     return {
-      ...final,
-      media_type: 'movie'
+      ...final
     }
   }, {})
-  return data
+  return {
+    data,
+    media_type: 'movie'
+  }
 }
 
 export const getDetailsMovie = async (movies) => {
