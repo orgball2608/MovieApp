@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
+import currentTabReducer from '../features/currentTab/currentTab.slice'
 
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { homeApi } from '../services/Home/home.service'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    [homeApi.reducerPath]: homeApi.reducer
+    [homeApi.reducerPath]: homeApi.reducer,
+    currentTab: currentTabReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(homeApi.middleware)
 })

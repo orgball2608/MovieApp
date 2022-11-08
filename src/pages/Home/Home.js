@@ -2,8 +2,11 @@ import React from 'react'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import BannerSlider from '../../components/Slider/BannerSlider'
 import SideBar from '../../components/SideBar'
+import { useSelector, useDispatch } from 'react-redux'
+import { setCurrentTab } from '../../features/currentTab/currentTab.slice'
 const Home = () => {
-  const [currentTab, setCurrentTab] = React.useState('movie')
+  const dispatch = useDispatch()
+  const { currentTab } = useSelector((state) => state.currentTab)
   return (
     <>
       <div className='flex'>
@@ -12,7 +15,7 @@ const Home = () => {
           <div className='flex justify-between items-end'>
             <div className='inline-flex gap-[40px] pb-[8px] border-gray-darken relative italic '>
               <button
-                onClick={() => setCurrentTab('tv')}
+                onClick={() => dispatch(setCurrentTab('tv'))}
                 className={`${
                   currentTab === 'tv' &&
                   'text-white text-base after:absolute after:bottom-0 after:left-[6%] after:bg-white after:h-[3px] after:w-10 font-bold'
@@ -21,7 +24,7 @@ const Home = () => {
                 TV Series
               </button>
               <button
-                onClick={() => setCurrentTab('movie')}
+                onClick={() => dispatch(setCurrentTab('movie'))}
                 className={`${
                   currentTab === 'movie' &&
                   'text-white text-base after:absolute after:bottom-0 after:right-[40%] after:bg-white after:h-[3px] after:w-10 font-bold'
@@ -30,7 +33,7 @@ const Home = () => {
                 Movies
               </button>
               <button
-                onClick={() => setCurrentTab('anime')}
+                onClick={() => dispatch(setCurrentTab('anime'))}
                 className={`${
                   currentTab === 'anime' &&
                   'text-white text-base after:absolute after:bottom-0 after:right-[3%] after:bg-white after:h-[3px] after:w-10 font-bold'
@@ -46,7 +49,7 @@ const Home = () => {
             </div>
           </div>
 
-          <BannerSlider currentTab={currentTab} />
+          <BannerSlider />
         </div>
 
         <div className='shrink-0 max-w-[308px] w-full hidden md:block'></div>

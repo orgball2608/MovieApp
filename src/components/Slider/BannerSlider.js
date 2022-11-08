@@ -7,12 +7,15 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { AiFillStar } from 'react-icons/ai'
 import Skeleton from '../Skeleton'
 import 'swiper/swiper-bundle.css'
+// redux
+import { useSelector } from 'react-redux'
 
-const BannerSlider = (currentTab) => {
+const BannerSlider = () => {
+  const { currentTab } = useSelector((state) => state.currentTab)
   const MoviesApi = useGetHomeApiQuery(`/trending/movie/day`)
   const TvApi = useGetHomeApiQuery(`/trending/tv/day`)
 
-  const { data, isLoading, isFetching } = currentTab.currentTab === 'movie' ? MoviesApi : TvApi
+  const { data, isLoading, isFetching } = currentTab === 'movie' ? MoviesApi : TvApi
 
   return (
     <div className='mt-6 relative h-0 md:pb-[45%] pb-[55%]  tw-banner-slider'>
