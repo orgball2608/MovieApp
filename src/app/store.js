@@ -4,11 +4,13 @@ import currentTabReducer from '../features/currentTab/currentTab.slice'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { homeApi } from '../services/Home/home.service'
 import { trendingApi } from '../services/Home/home.service'
+import { detailApi } from '../services/Home/home.service'
 
 export const store = configureStore({
   reducer: {
     [homeApi.reducerPath]: homeApi.reducer,
     [trendingApi.reducerPath]: trendingApi.reducer,
+    [detailApi.reducerPath]: detailApi.reducer,
     currentTab: currentTabReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(homeApi.middleware, trendingApi.middleware)

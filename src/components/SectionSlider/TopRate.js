@@ -8,7 +8,6 @@ const TopRate = () => {
   const MovieData = useGetHomeApiQuery(`/movie/top_rated`)
   const TVData = useGetHomeApiQuery(`/tv/top_rated`)
   const { data, error, isLoading } = currentTab === 'movie' ? MovieData : TVData
-  console.log(data)
   return (
     <>
       <h2 className='text-xl text-white font-medium tracking-wider mb-3'>TopRate</h2>

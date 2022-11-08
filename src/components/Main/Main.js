@@ -9,7 +9,7 @@ const Main = () => {
   return (
     <>
       <BannerSlider />
-      <ul className='flex flex-col gap-10 mt-16'>
+      <ul className='flex flex-col gap-10 mt-12'>
         <li>
           <Popular />
         </li>

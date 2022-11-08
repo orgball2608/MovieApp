@@ -1,4 +1,3 @@
-import { useGetTrendingApiQuery } from '../../services/Home/home.service'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import { Navigation } from 'swiper'
@@ -25,7 +24,11 @@ const SectionSlider = ({ films }) => {
                 <p className='whitespace-nowrap overflow-hidden text-ellipsis text-base text-gray-300 mt-1 text-center px-2 group-hover:text-white transition duration-300'>
                   {film.title || film.name}
                 </p>
-                <div className='bg-primary px-2 py-1 rounded-full absolute top-[5%] left-[8%] z-20 flex items-center gap-1 text-white text-xs'>
+                <div
+                  className={`${
+                    film.vote_average >= 8 ? 'bg-primary' : film.vote_average >= 6 ? ' bg-red-500' : 'bg-emerald-600'
+                  } px-2 py-1 rounded-full absolute top-[5%] left-[8%] z-20 flex items-center gap-1 text-white text-xs`}
+                >
                   {film.vote_average.toFixed(1)}
                   <AiFillStar size={15} />
                 </div>

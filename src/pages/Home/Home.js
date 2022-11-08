@@ -6,6 +6,7 @@ import { setCurrentTab } from '../../features/currentTab/currentTab.slice'
 
 import SideBar from '../../components/SideBar'
 import Main from '../../components/Main'
+import RightSideBar from '../../components/RightSideBar'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -53,8 +54,9 @@ const Home = () => {
           </div>
           <Main />
         </div>
-
-        <div className='shrink-0 max-w-[308px] w-full hidden md:block'></div>
+        <div className='shrink-0 max-w-[308px] w-full md:block pl-6'>
+          <RightSideBar />
+        </div>
       </div>
     </>
   )

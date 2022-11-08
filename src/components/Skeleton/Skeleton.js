@@ -1,8 +1,8 @@
-export default function Skeleton() {
+export default function Skeleton({ className }) {
   return (
     <div role='status' className='animate-pulse bg-dark-lighten rounded-md'>
       <svg
-        className='w-180 h-80 text-gray-200 dark:text-gray-600'
+        className={` text-gray-200 dark:text-gray-600 ${className}`}
         xmlns='http://www.w3.org/2000/svg'
         aria-hidden='true'
         fill='currentColor'
