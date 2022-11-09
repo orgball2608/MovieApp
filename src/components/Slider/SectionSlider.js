@@ -20,7 +20,7 @@ const SectionSlider = ({ films }) => {
           <SwiperSlide key={film.id} className='!w-[175px]'>
             <Link to={film.media_type === 'movie' ? `movie/${film.id}` : `tv/${film.id}`}>
               <div className='shadow-sm bg-dark-darken pb-2 rounded-md overflow-hidden hover:scale-105 hover:brightness-110 transition duration-300 relative group'>
-                <LazyLoadImage alt='Poster film' src={resizeImage(film.poster_path, 'w185')} className='object-cover' />
+                <LazyLoadImage alt='Poster film' src={resizeImage(film.poster_path, 'w342')} className='object-cover' />
                 <p className='whitespace-nowrap overflow-hidden text-ellipsis text-base text-gray-300 mt-1 text-center px-2 group-hover:text-white transition duration-300'>
                   {film.title || film.name}
                 </p>

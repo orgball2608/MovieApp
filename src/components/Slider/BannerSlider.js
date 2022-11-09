@@ -5,11 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { AiFillStar } from 'react-icons/ai'
-import Skeleton from '../Skeleton'
+import Skeleton from '../Common/Skeleton'
 import 'swiper/swiper-bundle.css'
 // redux
 import { useSelector } from 'react-redux'
 import formatDate from '../../shared/dataFormat'
+import GenresCard from '../Common/GenresCard'
 
 const BannerSlider = () => {
   const { currentTab } = useSelector((state) => state.currentTab)
@@ -51,6 +52,7 @@ const BannerSlider = () => {
                     {film.release_date && `${formatDate(film.release_date)}`}
                     {film.first_air_date && `${formatDate(film.first_air_date)}`}
                   </p>
+                  <GenresCard id={film.id} styleEle={''} />
 
                   <p className='mt-3 text-white  tw-multiline-ellipsis'>{film.overview}</p>
                 </div>

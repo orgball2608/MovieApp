@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <div className='flex'>
         <SideBar />
-        <div className='flex-grow pt-5 px-[28px] border-x border-dark-2 min-h-screen'>
+        <div className='flex-grow md:pt-7 pt-0 pb-7 border-x md:px-[2vw] px-[4vw] border-gray-darken min-h-screen'>
           <div className='flex justify-between items-end'>
             <div className='inline-flex gap-[40px] pb-[8px] border-gray-darken relative italic '>
               <button
@@ -54,7 +54,7 @@ const Home = () => {
           </div>
           <Main />
         </div>
-        <div className='shrink-0 max-w-[308px] w-full md:block pl-6'>
+        <div className='shrink-0 max-w-[310px] w-full hidden lg:block px-6 top-0 sticky '>
           <RightSideBar />
         </div>
       </div>

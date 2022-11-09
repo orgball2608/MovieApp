@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SkeletonTrending = ({ className }) => {
+const SkeletonTrending = ({ styleEle }) => {
   return (
     <div role='status' className='space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center'>
-      <div role='status' className='animate-pulse bg-dark-lighten rounded-md'>
+      <div role='status' className={`animate-pulse bg-dark-lighten rounded-lg ${styleEle}`}>
         <svg
-          className={` text-gray-200 dark:text-gray-600 ${className} h-36`}
+          className={`text-gray-200 dark:text-gray-600 w-14 h-20 mt-8`}
           xmlns='http://www.w3.org/2000/svg'
           aria-hidden='true'
           fill='currentColor'
